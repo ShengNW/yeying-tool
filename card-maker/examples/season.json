@@ -1,0 +1,15 @@
+{
+  "preset": "season",
+  "title": "季卡",
+  "brand": "& Fangyuan Yili 方圆一鲤",
+  "bullets": [
+    "验券后九十天内有效",
+    "按天扣除，需连续使用",
+    "适用小黑屋，靠窗区，开放区"
+  ],
+  "bg": "#0F2A27",
+  "accent": "#D4B483",
+  "width": 1920,
+  "format": "png",
+  "out": "output/season_card.png"
+}

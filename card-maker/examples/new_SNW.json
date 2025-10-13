@@ -1,0 +1,19 @@
+{
+  "preset": "new_SNW",
+  "title": "新客体验天卡\n（新人限购）",
+  "brand": "YeYing 面试官",
+  "bullets": [
+    "验券后七天内有效",
+    "可跨天使用",
+    "适用小黑屋，靠窗区，开放区"
+  ],
+  "bg": "#FDB954",
+  "accent": "#1E90FF",
+  "decorations": [
+    { "x": 0.075, "y": 0.86, "size": 0.088, "color": "#7C3AED" },
+    { "x": 0.94,  "y": 0.11, "size": 0.045, "color": "#FFFFFF" }
+  ],
+  "width": 1920,
+  "format": "png",
+  "out": "output/new_card.png"
+}

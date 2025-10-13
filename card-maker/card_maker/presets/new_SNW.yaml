@@ -1,0 +1,63 @@
+bg: '#EBBE77'
+accent: '#FFFFFF'
+title_align: left
+
+decorations:
+  - x: 0.075
+    y: 0.86
+    size: 0.022
+    color: '#000000'
+  - x: 0.94
+    y: 0.11
+    size: 0.018
+    color: '#FFFFFF'
+
+title:
+  style:
+    align: left
+    color: '#FFFFFF'
+    font_weight: 400
+    wrap_width_pct: 0.46
+    font_size_min_pct: 0.12
+    font_size_max_pct: 0.18
+  subtitle:
+    from_parentheses: true
+    color: '#FFFFFF'
+    opacity: 0.6
+    size_ratio: 0.38
+  block_spacing_pct: 0.035
+
+underline:
+  style:
+    align: left
+    length_pct: 0.32
+    thickness_pct: 0.010
+    radius_pct: 1.0
+  offset_from_title_pct: 0.012
+
+bullet_card:
+  width_pct: 0.50
+  left_pct: 0.25
+  top_pct: 0.62
+  corner_radius_pct: 0.026
+  padding_pct:
+    x: 0.045
+    y: 0.055
+  shadow:
+    y: 4
+    blur: 28
+    opacity: 0.18
+
+bullet:
+  marker: dot
+  marker_size_pct: 0.014
+  marker_color: '#FDB954'
+  indent_pct: 0.020
+  line_height: 1.5
+
+brand:
+  enabled: true
+  color: '#FFFFFF'
+  opacity: 0.8
+  size_min_pct: 0.022
+  margin_pct: 0.05

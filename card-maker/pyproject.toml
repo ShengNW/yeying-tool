@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "card-maker"
+version = "0.1.0"
+description = "Generate 16:9 e-commerce hero cards with Chinese-friendly layout."
+authors = [{name = "You"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "Pillow>=10.2.0",
+  "PyYAML>=6.0.1"
+]
+
+[project.scripts]
+card-maker = "card_maker.cli:main"

@@ -1,0 +1,6 @@
+bg: "#0F2A27"
+accent: "#D4B483"
+title_align: center
+decorations:
+  - {x: 0.12, y: 0.82, size: 0.036}
+  - {x: 0.92, y: 0.16, size: 0.028}

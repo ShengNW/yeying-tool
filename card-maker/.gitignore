@@ -1,0 +1,17 @@
+﻿# 不要上传历史旧件（任意层级、任意后缀）
+**/*_old.*
+
+# 生成物与缓存
+output/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.DS_Store
+
+# 本地环境与 IDE
+.venv/
+.env
+.vscode/
+.idea/
+*.code-workspace

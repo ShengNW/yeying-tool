@@ -1,0 +1,15 @@
+{
+  "preset": "month",
+  "title": "月卡",
+  "brand": "& Fangyuan Yili 方圆一鲤",
+  "bullets": [
+    "验券后三十天内有效",
+    "按天扣除，需连续使用",
+    "适用小黑屋，靠窗区，开放区"
+  ],
+  "bg": "#F3EEE6",
+  "accent": "#E7A028",
+  "width": 1920,
+  "format": "png",
+  "out": "output/month_card.png"
+}

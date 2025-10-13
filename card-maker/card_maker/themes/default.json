@@ -1,0 +1,14 @@
+{
+  "colors": {
+    "bg_default": "#F3EEE6",
+    "accent_default": "#E7A028"
+  },
+  "shadow": {
+    "radius_pct": 0.02,
+    "opacity_light": 90,
+    "opacity_dark": 140
+  },
+  "spacing": {
+    "safe_pct": 0.06
+  }
+}

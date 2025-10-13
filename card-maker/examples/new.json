@@ -1,0 +1,15 @@
+{
+  "preset": "new",
+  "title": "新客体验天卡（新人限购）",
+  "brand": "& Fangyuan Yili 方圆一鲤",
+  "bullets": [
+    "验券后七天内有效",
+    "可跨天使用",
+    "适用小黑屋，靠窗区，开放区"
+  ],
+  "bg": "#FDB954",
+  "accent": "#FFFFFF",
+  "width": 1920,
+  "format": "png",
+  "out": "output/new_card.png"
+}

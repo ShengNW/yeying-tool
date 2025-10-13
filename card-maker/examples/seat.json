@@ -1,0 +1,14 @@
+{
+  "preset": "seat",
+  "title": "锁座卡（联系店长）",
+  "brand": "& Fangyuan Yili 方圆一鲤",
+  "bullets": [
+    "固定一个座位",
+    "适用小黑屋，靠窗区，开放区"
+  ],
+  "bg": "#000000",
+  "accent": "#E7A028",
+  "width": 1920,
+  "format": "png",
+  "out": "output/seat_card.png"
+}
