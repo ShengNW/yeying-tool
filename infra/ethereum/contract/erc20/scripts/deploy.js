@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function main() {
-    console.log("🏓 Deploying PaiX Token to Devnet...");
+    console.log("🏓 Deploying Erc20 Token to Devnet...");
 
     try {
         // 获取部署账户
@@ -29,7 +29,7 @@ async function main() {
 
         // 获取合约工厂
         console.log("Getting contract factory...");
-        const PaiXToken = await hre.ethers.getContractFactory("PaiXToken");
+        const Erc20Token = await hre.ethers.getContractFactory("Erc20Token");
 
         // 获取当前网络的 gas 价格
         const feeData = await hre.ethers.provider.getFeeData();
@@ -50,23 +50,23 @@ async function main() {
             console.log("Using legacy gas pricing");
         }
 
-        console.log("Deploying PaiXToken with options:", deployOptions);
+        console.log("Deploying Erc20Token with options:", deployOptions);
 
         // 部署合约
-        const paixToken = await PaiXToken.deploy(initialSupply, deployOptions);
+        const erc20Token = await Erc20Token.deploy(initialSupply, deployOptions);
 
         console.log("Waiting for deployment transaction...");
         
         // 等待部署交易被挖掘
-        const deploymentTx = paixToken.deploymentTransaction();
+        const deploymentTx = erc20Token.deploymentTransaction();
         if (deploymentTx) {
             console.log("Deployment transaction hash:", deploymentTx.hash);
             await deploymentTx.wait(1); // 等待 1 个确认
         }
 
         // 获取合约地址
-        const contractAddress = await paixToken.getAddress();
-        console.log("✅ PaiXToken deployed to:", contractAddress);
+        const contractAddress = await erc20Token.getAddress();
+        console.log("✅ Erc20Token deployed to:", contractAddress);
 
         // 等待几个区块确认
         console.log("Waiting for additional confirmations...");
@@ -78,12 +78,12 @@ async function main() {
         console.log("\n📋 Verifying Contract Deployment:");
         
         try {
-            const name = await paixToken.name();
-            const symbol = await paixToken.symbol();
-            const decimals = await paixToken.decimals();
-            const totalSupply = await paixToken.totalSupply();
-            const owner = await paixToken.owner();
-            const ownerBalance = await paixToken.balanceOf(deployer.address);
+            const name = await erc20Token.name();
+            const symbol = await erc20Token.symbol();
+            const decimals = await erc20Token.decimals();
+            const totalSupply = await erc20Token.totalSupply();
+            const owner = await erc20Token.owner();
+            const ownerBalance = await erc20Token.balanceOf(deployer.address);
 
             console.log("Name:", name);
             console.log("Symbol:", symbol);
@@ -130,7 +130,7 @@ async function main() {
         const deploymentInfo = {
             network: hre.network.name,
             networkId: (await hre.ethers.provider.getNetwork()).chainId.toString(),
-            contractName: "PaiXToken",
+            contractName: "Erc20Token",
             contractAddress: contractAddress,
             deployer: deployer.address,
             deploymentTime: new Date().toISOString(),
@@ -163,7 +163,7 @@ async function main() {
         // 输出有用的信息
         console.log("\n🎉 Deployment Summary:");
         console.log("=".repeat(50));
-        console.log(`Contract: PaiXToken`);
+        console.log(`Contract: Erc20Token`);
         console.log(`Address: ${contractAddress}`);
         console.log(`Network: ${hre.network.name}`);
         console.log(`Deployer: ${deployer.address}`);
@@ -171,7 +171,7 @@ async function main() {
         console.log("=".repeat(50));
 
         return {
-            contract: paixToken,
+            contract: erc20Token,
             address: contractAddress,
             deploymentInfo: deploymentInfo
         };
