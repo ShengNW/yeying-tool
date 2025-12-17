@@ -29,7 +29,7 @@ async function main() {
 
         // 获取合约工厂
         console.log("Getting contract factory...");
-        const PaiXToken = await hre.ethers.getContractFactory("PaiXToken");
+        const Erc20Token = await hre.ethers.getContractFactory("Erc20Token");
 
         // 获取当前网络的 gas 价格
         const feeData = await hre.ethers.provider.getFeeData();
@@ -50,10 +50,10 @@ async function main() {
             console.log("Using legacy gas pricing");
         }
 
-        console.log("Deploying PaiXToken with options:", deployOptions);
+        console.log("Deploying Erc20Token with options:", deployOptions);
 
         // 部署合约
-        const paixToken = await PaiXToken.deploy(initialSupply, deployOptions);
+        const paixToken = await Erc20Token.deploy(initialSupply, deployOptions);
 
         console.log("Waiting for deployment transaction...");
         
@@ -66,7 +66,7 @@ async function main() {
 
         // 获取合约地址
         const contractAddress = await paixToken.getAddress();
-        console.log("✅ PaiXToken deployed to:", contractAddress);
+        console.log("✅ Erc20Token deployed to:", contractAddress);
 
         // 等待几个区块确认
         console.log("Waiting for additional confirmations...");
@@ -130,7 +130,7 @@ async function main() {
         const deploymentInfo = {
             network: hre.network.name,
             networkId: (await hre.ethers.provider.getNetwork()).chainId.toString(),
-            contractName: "PaiXToken",
+            contractName: "Erc20Token",
             contractAddress: contractAddress,
             deployer: deployer.address,
             deploymentTime: new Date().toISOString(),
@@ -163,7 +163,7 @@ async function main() {
         // 输出有用的信息
         console.log("\n🎉 Deployment Summary:");
         console.log("=".repeat(50));
-        console.log(`Contract: PaiXToken`);
+        console.log(`Contract: Erc20Token`);
         console.log(`Address: ${contractAddress}`);
         console.log(`Network: ${hre.network.name}`);
         console.log(`Deployer: ${deployer.address}`);
