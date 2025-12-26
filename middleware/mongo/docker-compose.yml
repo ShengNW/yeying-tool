@@ -1,6 +1,6 @@
 services:
   mongo-primary:
-    image: mongo:5
+    image: mongo:7
     container_name: mongo-primary
     restart: unless-stopped
     command: ["--replSet", "rs0", "--bind_ip_all"]

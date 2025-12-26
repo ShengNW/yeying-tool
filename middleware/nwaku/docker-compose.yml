@@ -1,0 +1,32 @@
+services:
+  nwaku:
+    image: wakuorg/nwaku:${NWAKU_VERSION:-v0.36.0}
+    container_name: ${CONTAINER_NAME:-nwaku-node}
+    restart: unless-stopped
+    ports:
+      - "${TCP_PORT:-60000}:60000"
+      - "${WS_PORT:-60001}:60001"
+      - "${UDP_PORT:-9000}:9000/udp"
+      - "${REST_PORT:-8645}:8645"
+    environment:
+      - DOMAIN=${DOMAIN:-}
+    command:
+      - --log-level=INFO
+      - --listen-address=0.0.0.0
+      - --cluster-id=${CLUSTER_ID}
+      - --nodekey=${NODE_KEY}
+      - --tcp-port=60000
+      - --rest=true
+      - --rest-address=0.0.0.0
+      - --rest-port=8645
+      - --relay=true
+      - --store=true
+      - --lightpush=true
+      - --filter=true
+      - --websocket-support=true
+      - --websocket-port=60001
+      - --nat=extip:${NAT_IP}
+      - --discv5-discovery=${DISCV5_DISCOVERY:-false}
+      - --dns-discovery=false
+      - --peer-exchange=${PEER_EXCHANGE:-true}
+

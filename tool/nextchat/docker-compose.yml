@@ -1,9 +1,8 @@
 services:
   chatgpt-next-web:
     container_name: chatgpt-next-web
-    image: yeying-community/nextchat
+    image: yeying2025/nextchat:3.0.0
+    env_file:
+     - .env
     ports:
-      - 7857:3000
-    environment:
-      - OPENAI_API_KEY=
-      - CODE=
+      - 3000:3000
