@@ -1,6 +1,6 @@
-# 设置初始化语句
+# 启动数据库
 
-## 首次启动需要初始化的命令
+## 设置首次启动的初始化命令（可选）
 
 ```shell
 # 参考 init.db.template 目录里的文件写初始化脚本
@@ -9,9 +9,26 @@ mkdir init.db
 # 添加要执行的sql语句
 vi init.db/01.sql
 
-# 需要说明的是，如果容器之前已经启动过，事后放入的脚本将不会执行，需要手动执行如下
-
+# 需要说明的是，如果容器之前已经启动过，事后放入的脚本将不会执行，需要手动执行
+# 如下命令
 docker compose exec postgres psql -U postgres -d postgres -f /docker-entrypoint-initdb.d/01.sql
+```
+## 配置`.env`文件
+
+```shell
+cp .env.template .env
+# 然后根据需要编辑 .env 文件，如果只是简单本地测试可以不用修改
+```
+
+## 启动容器
+
+```shell
+
+docker compose up -d
+
+# 如果需要重启
+docker compose down -v && docker compose up -d
+
 ```
 
 # 连接数据库
